@@ -1,0 +1,34 @@
+<%- include("partials/header") -%>
+
+<div class="main-container">
+  <div class="container-login">
+    <div class="content">
+      <p class="header">Log in to see more</p>
+
+      <% if(error.length> 0) { %>
+        <p class="error">
+          <%= error %>
+        </p>
+        <% } %>
+
+          <form action="/login" method="post">
+            <input type="text" placeholder="Username" class="detail" name="username" /><br />
+            <input type="password" placeholder="Password" name="password" class="detail" />
+            <button type="submit" class="btn int">Log in</button>
+          </form>
+          <h4>Forgot your password?</h4>
+
+          <footer>
+            <p>
+              By continuing, you agree to Pinterest's
+              <b>Terms of Service, Privacy policy.</b>
+            </p>
+            <hr />
+            <a href="/">Not on Pinterest yet? Sign up</a>
+          </footer>
+    </div>
+  </div>
+  <a href="/" class="upbtn">Sign up</a>
+</div>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,63 @@
+<%- include("partials/header") -%>
+
+<div class="post-container">
+  <div class="user-details">
+    <div class="profile-img">
+      <img src="/images/uploads/<%= post.user.profileImage %>" alt="" />
+    </div>
+    <div class="user-info">
+      <h3><%= post.user.username %></h3>
+
+      <div class="time">
+        <small>@<%= post.user.fullname %></small>
+        <small>.<%= date %>d</small>
+      </div>
+    </div>
+  </div>
+  <div class="image">
+    <img src="/images/uploads/<%= post.postData %>" alt="#" />
+  </div>
+  <div class="desc">
+    <div class="title">
+      <h2><%= post.postCaption %></h2>
+    </div>
+    <div class="description">
+      <p><%= post.postDescription %></p>
+    </div>
+  </div>
+  <form action="/show-posts/desc?id=<%= post._id %>" method="post" class="form">
+    <div class="like">
+      <div class="likes">
+        <i class="fa-regular fa-heart like-btn"></i>
+        <span><%= post.likes.length %></span>
+      </div>
+      <div class="comment">
+        <i class="fa-regular fa-comment comment-btn"></i>
+        <span>12</span>
+      </div>
+    </div>
+  </form>
+  <a href="/show-posts/save?id=<%= post._id %>" class="save">
+    Save
+  </a>
+</div>
+
+<script>
+  document.querySelector(".like-btn").addEventListener("click", function () {
+    document.querySelector(".form").submit();
+  });
+</script>
+
+<% if (liked) { %>
+<script>
+  document.querySelector(".like-btn").classList.add("fa-solid");
+  document.querySelector(".like-btn").style.color = "red";
+  document.querySelector(".like-btn").classList.remove("fa-regular");
+</script>
+<% } %> <% if(liked == false) { %>
+<script>
+  document.querySelector(".like-btn").classList.add("fa-regular");
+  document.querySelector(".like-btn").style.color = "black";
+  document.querySelector(".like-btn").classList.remove("fa-solid");
+</script>
+<% } %> <%- include("partials/footer") -%>

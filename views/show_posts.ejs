@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+
+<div class="grid">
+    <% user?.posts.forEach(function(post) { %>
+        <div class="grid-item">
+            <a href="/show-posts/desc?id=<%= post?._id %>"><img src="/images/uploads/<%= post.postData %>" /></a>
+            <p class="postTitle">
+                <%= post.postCaption %>
+            </p>
+        </div>
+    <% });%>
+
+</div>
+
+
+<%- include("partials/footer") -%>

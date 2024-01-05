@@ -1,0 +1,18 @@
+<%- include("partials/header") -%>
+
+    <div class="upload-form">
+        <form action="/uploadFile" method="post" enctype="multipart/form-data">
+            
+                    <div class="modal-body">
+                        <input type="text" name="filecaption" id="filecaption" placeholder="Caption" required>
+                        <textarea name="postDesc" id="postDesc" cols="30" rows="10"
+                            placeholder="Write post Descrition header" required></textarea>
+                        <input type="file" name="file" id="file" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary upload-button">Upload</button>
+                    </div>
+        </form>
+    </div>
+
+    <%- include("partials/footer") -%>

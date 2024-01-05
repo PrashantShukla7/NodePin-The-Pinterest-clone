@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+
+  <div class="main-container">
+    <div class="container-signup">
+      <div class="content">
+        <p class="header">Create account to explore more</p>
+        <form action="/register" method="post">
+          <input type="username" placeholder="Username" name="username" class="detail" /><br />
+          <input type="fullname" placeholder="Full Name" name="fullname" class="detail" /><br />
+          <input type="email" placeholder="Email" name="email" class="detail" /><br />
+          <input type="password" placeholder="Password" name="password" class="detail" />
+          <button class="btn int" type="submit">Register</button>
+        </form>
+        <h4>Forgot your password?</h4>
+
+        <footer>
+          <p>
+            By continuing, you agree to Pinterest's
+            <b>Terms of Service, Privacy policy.</b>
+          </p>
+          <hr />
+          <a href="/login">Already on Pinterest? Login</a>
+        </footer>
+      </div>
+    </div>
+    <a href="/login" class="upbtn">Login</a>
+  </div>
+
+  <%- include("partials/footer") -%>

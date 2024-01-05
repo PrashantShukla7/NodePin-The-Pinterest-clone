@@ -1,0 +1,25 @@
+<%- include('partials/header') -%>
+
+<div class="users">
+  <div class="users-list">
+    <ul>
+      <% users.forEach(user => { %>
+
+      <li>
+        <div class="profile-img">
+          <img
+            src="/images/uploads/<%= user.profileImage %>"
+            alt=""
+          />
+        </div>
+        <a href="/profile/user?user=<%= user.username %>" class="name">
+          <p><%= user.fullname %></p>
+          <small>@<%= user.username %></small>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>

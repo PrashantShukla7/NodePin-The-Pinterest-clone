@@ -1,0 +1,79 @@
+<%- include("partials/header") -%>
+
+<form
+  hidden
+  action="/uploadProfile"
+  method="post"
+  class="uploadForm"
+  enctype="multipart/form-data"
+>
+  <input type="file" class="profile-pic" name="image" />
+</form>
+
+<div class="content-profile-page">
+  <div class="profile-user-page profile-card">
+    <div class="img-user-profile">
+      <div class="edit-profile">
+        <img src="/images/pencil.png" alt="#" />
+      </div>
+      <div class="profile-pic">
+        <img
+          class="avatar"
+          src="/images/uploads/<%=user.profileImage %>"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="buttons">
+      <!-- trigger modal -->
+      <a href="/uploadFile" type="button" class="upload-btn">Upload</a>
+    </div>
+
+    <div class="user-profile-data">
+      <h1><%= user.fullname %></h1>
+      <p>@<%= user.username %></p>
+    </div>
+  </div>
+</div>
+
+<% if(user.posts.length>0) { %>
+<div class="container d-flex p-2">
+  <div class="grid-item">
+    <a href="/show-posts"
+      ><img
+        src="/images/uploads/<%=user?.posts[0]?.postData %>"
+        alt="No posts yet"
+    /></a>
+    <p class="postTitle"><%= user?.posts.length%> pins</p>
+  </div>
+
+  <% if(user.saved.length>0) { %>
+  <div class="grid-item">
+    <a href="/saved-posts"
+      ><img
+        src="/images/uploads/<%=user?.saved[0]?.postData %>"
+        alt="No posts yet"
+    /></a>
+    <p class="postTitle">Saved <%= user?.saved.length%></p>
+  </div>
+  <% } %>
+</div>
+<% } %>
+
+<div class="container d-flex p-2">
+</div>
+
+<script>
+  document
+    .querySelector(".edit-profile img")
+    .addEventListener("click", function () {
+      document.querySelector(".profile-pic").click();
+    });
+  document
+    .querySelector(".profile-pic")
+    .addEventListener("change", function () {
+      document.querySelector(".uploadForm").submit();
+    });
+</script>
+
+<%- include("partials/footer") -%>

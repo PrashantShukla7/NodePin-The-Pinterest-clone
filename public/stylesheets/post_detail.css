@@ -1,0 +1,101 @@
+.post-container {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: #bebebe;
+  padding: 20px;
+  height: auto;
+}
+
+.image {
+  width: 500px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.image img {
+  width: inherit;
+}
+
+.desc {
+  margin-left: 5rem;
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.description {
+  margin-bottom: 15px;
+}
+
+.desc h4 {
+  font-size: 18px;
+  margin-left: -3px;
+}
+
+.desc h2 {
+  font-size: 30px;
+}
+.like {
+  margin-left: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.like-btn {
+  font-size: 25px;
+}
+
+.likes,
+.comment {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+span {
+  font-weight: bold;
+}
+.like img {
+  width: 25px;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: 90px;
+  margin-bottom: 30px;
+}
+
+.profile-img,
+.profile-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 7px 0px;
+}
+
+.time small:last-child {
+  font-weight: bold;
+  color: #616161;
+}
+
+.save {
+  width: 6rem;
+  height: 3rem;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(255, 34, 0);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}

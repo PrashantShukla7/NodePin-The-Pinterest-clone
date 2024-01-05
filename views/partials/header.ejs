@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <link rel="stylesheet" href="/stylesheets/uploadFile.css" />
+    <link rel="stylesheet" href="/stylesheets/nav.css" />
+    <link rel="stylesheet" href="/stylesheets/post_detail.css" />
+    <link rel="stylesheet" href="/stylesheets/search.css" />
+  </head>
+
+  <body>
+    <% if(nav===true) { %>
+    <!-- navbar -->
+    <div class="nav">
+      <div class="left-container">
+        <span class="logout">NodePin</span>
+      </div>
+      <form action="/search" method="post">
+        <div class="search-container">
+          <div class="search">
+            <input type="text" placeholder="Search" name="search" />
+          </div>
+          <div class="search-btn">
+            <button type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+      <div class="right-container">
+        <ul>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/feed">Feed</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <% } %>
+  </body>
+</html>
